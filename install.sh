@@ -85,7 +85,7 @@ cd -
 cp -a server/node_modules server/dist server/bin $APP/
 cp -a web/build $APP/www
 cp -a server/resources server/package.json server/package-lock.json $APP/
-cp -a server/start*.sh $APP/
+#cp -a server/start*.sh $APP/
 cp -a LICENSE $APP/
 cp -a i18n $APP/../
 cd $APP
