@@ -90,7 +90,6 @@ cp -a LICENSE $APP/
 cp -a i18n $APP/../
 cp -a pnpm-lock.yaml $APP/../
 cd $APP
-pnpm cache clean --force
 cd -
 
 # immich-machine-learning
