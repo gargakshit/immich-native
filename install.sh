@@ -121,7 +121,7 @@ rm cities500.zip
 
 # Install sharp
 cd $APP
-pnpm install sharp
+# pnpm install sharp
 
 # Setup upload directory
 mkdir -p $IMMICH_PATH/upload
