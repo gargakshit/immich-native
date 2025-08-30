@@ -84,10 +84,11 @@ cd -
 
 cp -a server/node_modules server/dist server/bin $APP/
 cp -a web/build $APP/www
-cp -a server/resources server/package.json server/pnpm-lock.yaml $APP/
+cp -a server/resources server/package.json $APP/
 #cp -a server/start*.sh $APP/
 cp -a LICENSE $APP/
 cp -a i18n $APP/../
+cp -a pnpm-lock.yaml $APP/../
 cd $APP
 pnpm cache clean --force
 cd -
