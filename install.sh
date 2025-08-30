@@ -67,19 +67,19 @@ grep -RlE "\"/build\"|'/build'" | xargs -n1 sed -i -e "s@\"/build\"@\"$APP\"@g" 
 
 # immich-server
 cd server
-npm ci
-npm run build
-npm prune --omit=dev --omit=optional
+pnpm install --frozen-lockfile
+pnpm run build
+pnpm prune --omit=dev --omit=optional
 cd -
 
 cd open-api/typescript-sdk
-npm ci
-npm run build
+pnpm install --frozen-lockfile
+pnpm run build
 cd -
 
 cd web
-npm ci
-npm run build
+pnpm install --frozen-lockfile
+pnpm run build
 cd -
 
 cp -a server/node_modules server/dist server/bin $APP/
@@ -89,7 +89,7 @@ cp -a server/resources server/package.json server/package-lock.json $APP/
 cp -a LICENSE $APP/
 cp -a i18n $APP/../
 cd $APP
-npm cache clean --force
+pnpm cache clean --force
 cd -
 
 # immich-machine-learning
@@ -121,7 +121,7 @@ rm cities500.zip
 
 # Install sharp
 cd $APP
-npm install sharp
+pnpm install sharp
 
 # Setup upload directory
 mkdir -p $IMMICH_PATH/upload
