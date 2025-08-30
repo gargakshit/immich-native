@@ -69,7 +69,7 @@ grep -RlE "\"/build\"|'/build'" | xargs -n1 sed -i -e "s@\"/build\"@\"$APP\"@g" 
 cd server
 pnpm install --frozen-lockfile
 pnpm run build
-pnpm prune --omit=dev --omit=optional
+pnpm prune --prod --no-optional
 cd -
 
 cd open-api/typescript-sdk
@@ -84,7 +84,7 @@ cd -
 
 cp -a server/node_modules server/dist server/bin $APP/
 cp -a web/build $APP/www
-cp -a server/resources server/package.json server/package-lock.json $APP/
+cp -a server/resources server/package.json server/pnpm-lock.yaml $APP/
 #cp -a server/start*.sh $APP/
 cp -a LICENSE $APP/
 cp -a i18n $APP/../
